@@ -1,0 +1,2249 @@
+{
+  "contractName": "Types",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "saleId",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "buyer",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "BoughtFromSale",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint96",
+          "name": "Commission",
+          "type": "uint96"
+        }
+      ],
+      "name": "CommissionUpdated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newEscrow",
+          "type": "address"
+        }
+      ],
+      "name": "EscrowUpdated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "licenseId",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "seller",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "price",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "listedAmount",
+          "type": "uint256"
+        }
+      ],
+      "name": "LicenseListed",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "licenseId",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "seller",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "buyer",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "price",
+          "type": "uint256"
+        }
+      ],
+      "name": "LicenseSold",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "licenseId",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "seller",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "enum Types.ListedStatus",
+          "name": "status",
+          "type": "uint8"
+        }
+      ],
+      "name": "ListedLicenseClosed",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "listingFee",
+          "type": "uint256"
+        }
+      ],
+      "name": "ListingFeeUpdated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "saleId",
+          "type": "uint256"
+        }
+      ],
+      "name": "SaleActivated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "saleId",
+          "type": "uint256"
+        }
+      ],
+      "name": "SaleClosed",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "representative",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "saleId",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "SaleCreated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newToken",
+          "type": "address"
+        }
+      ],
+      "name": "TokenUpdated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newTreasury",
+          "type": "address"
+        }
+      ],
+      "name": "TreasuryUpdated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        }
+      ],
+      "name": "UserVerified",
+      "type": "event"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.14+commit.80d49f37\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"saleId\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"buyer\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"BoughtFromSale\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint96\",\"name\":\"Commission\",\"type\":\"uint96\"}],\"name\":\"CommissionUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newEscrow\",\"type\":\"address\"}],\"name\":\"EscrowUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"licenseId\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"seller\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"price\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"listedAmount\",\"type\":\"uint256\"}],\"name\":\"LicenseListed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"licenseId\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"seller\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"buyer\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"price\",\"type\":\"uint256\"}],\"name\":\"LicenseSold\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"licenseId\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"seller\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"enum Types.ListedStatus\",\"name\":\"status\",\"type\":\"uint8\"}],\"name\":\"ListedLicenseClosed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"listingFee\",\"type\":\"uint256\"}],\"name\":\"ListingFeeUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"saleId\",\"type\":\"uint256\"}],\"name\":\"SaleActivated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"saleId\",\"type\":\"uint256\"}],\"name\":\"SaleClosed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"representative\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"saleId\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"SaleCreated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newToken\",\"type\":\"address\"}],\"name\":\"TokenUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newTreasury\",\"type\":\"address\"}],\"name\":\"TreasuryUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"}],\"name\":\"UserVerified\",\"type\":\"event\"}],\"devdoc\":{\"events\":{\"BoughtFromSale(uint256,uint256,address,uint256)\":{\"params\":{\"saleId\":\"id of the current ongoing sale\",\"tokenId\":\"token id of the license to be sold*\"}},\"CommissionUpdated(uint96)\":{\"params\":{\"Commission\":\"new commission basis points*\"}},\"EscrowUpdated(address)\":{\"params\":{\"newEscrow\":\"address to which escrow is updated to*\"}},\"LicenseListed(uint256,uint256,address,uint256,uint256)\":{\"params\":{\"licenseId\":\"id of the current ongoing license\",\"listedAmount\":\"amount licences listed*\",\"price\":\"matic price of the listed license id\",\"seller\":\"address of the lister\",\"tokenId\":\"token id of the license to be sold\"}},\"LicenseSold(uint256,uint256,address,address,uint256,uint256)\":{\"params\":{\"amount\":\"amount licences listed\",\"buyer\":\"adress of buyer\",\"licenseId\":\"id of the current ongoing license\",\"price\":\"matic price of the listed license id*\",\"seller\":\"address of the lister\",\"tokenId\":\"token id of the license to be sold\"}},\"ListedLicenseClosed(uint256,uint256,address,uint8)\":{\"params\":{\"licenseId\":\"id of the current ongoing license\",\"seller\":\"address of the lister\",\"status\":\"matic price of the listed license id*\",\"tokenId\":\"token id of the closed listed license\"}},\"ListingFeeUpdated(uint256)\":{\"params\":{\"listingFee\":\"new listing fee*\"}},\"SaleActivated(uint256)\":{\"params\":{\"saleId\":\"id of the current ongoing sale*\"}},\"SaleClosed(uint256)\":{\"params\":{\"saleId\":\"id of the current ongoing sale*\"}},\"SaleCreated(address,uint256,uint256)\":{\"params\":{\"representative\":\"license provider\",\"saleId\":\"id of the current ongoing sale\",\"tokenId\":\"tokenId of the license in the sale*\"}},\"TokenUpdated(address)\":{\"params\":{\"newToken\":\"address to which escrow is updated to*\"}},\"TreasuryUpdated(address)\":{\"params\":{\"newTreasury\":\"address to which the treasury is updated to*\"}},\"UserVerified(address)\":{\"params\":{\"user\":\"address to which escrow is updated to*\"}}},\"kind\":\"dev\",\"methods\":{},\"title\":\"contains the data structures utilized in the heirloom marketplace;\",\"version\":1},\"userdoc\":{\"events\":{\"BoughtFromSale(uint256,uint256,address,uint256)\":{\"notice\":\"emitted after a license is bought from a sale\"},\"CommissionUpdated(uint96)\":{\"notice\":\"emitted after the commission basis points is updated \"},\"EscrowUpdated(address)\":{\"notice\":\"emitted after the treasury is updated \"},\"LicenseListed(uint256,uint256,address,uint256,uint256)\":{\"notice\":\"emitted after a license is listed by a user\"},\"LicenseSold(uint256,uint256,address,address,uint256,uint256)\":{\"notice\":\"emitted after a license is listed by a user\"},\"ListedLicenseClosed(uint256,uint256,address,uint8)\":{\"notice\":\"emitted after a listed license is closed\"},\"ListingFeeUpdated(uint256)\":{\"notice\":\"emitted after the listing fee is updated \"},\"SaleActivated(uint256)\":{\"notice\":\"emitted after a (future) sale is activated\"},\"SaleClosed(uint256)\":{\"notice\":\"emitted after a close sale\"},\"SaleCreated(address,uint256,uint256)\":{\"notice\":\"emitted after every sale created\"},\"TokenUpdated(address)\":{\"notice\":\"emitted after the treasury is updated \"},\"TreasuryUpdated(address)\":{\"notice\":\"emitted after the treasury is updated \"},\"UserVerified(address)\":{\"notice\":\"emitted after the treasury is updated \"}},\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/Types.sol\":\"Types\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":500},\"remappings\":[]},\"sources\":{\"project:/contracts/Types.sol\":{\"keccak256\":\"0x44ea0843a8176a595515cdc57e437dbcd60803638a6b94e2df5483e1161accbe\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://d283db5f01df9d42eabcae03a9ea10403cd6b64a24b097ac5768e9f9e45f2fbe\",\"dweb:/ipfs/QmWtCsJP78bG5xSK9kc6BCW1TgNQQG2LvSo4TWm2LaCm7H\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.4;\r\n\r\n/**\r\n    @title contains the data structures utilized in the heirloom marketplace;\r\n*/\r\n\r\nabstract contract Types {\r\n    \r\n    /**\r\n      @notice represents status of listed license\r\n    */\r\n    enum ListedStatus { Open, Closed }\r\n    \r\n\r\n    /**\r\n        @notice represents a sale item object\r\n        @dev The first time the sale Item is redeemed minted becomes true\r\n        @dev The total balance of the token can never exceed the total suppy of the token \r\n    */\r\n    struct SaleItem {\r\n        uint256 saleId;\r\n        address licenseProvider;\r\n        address representative;\r\n        uint256 tokenId;\r\n        address nftContract;\r\n        address refferer;\r\n        uint256 soldLicenses;\r\n        uint256 maxSupply;\r\n        uint256 start;\r\n        uint256 end;\r\n        uint256 price;\r\n        bool active;\r\n        bool isFuture;\r\n    }\r\n\r\n    /**\r\n        @notice represents a LicenseItem\r\n    **/\r\n    struct LicenseItem {\r\n        uint256 tokenId;\r\n        uint256 licenseId;\r\n        address nftContract;\r\n        address seller;\r\n        uint256 price;\r\n        uint256 listedAmount;\r\n        uint256 sold;\r\n        ListedStatus status; \r\n    }\r\n    \r\n    /**\r\n        @notice emitted after every sale created\r\n        @param representative license provider\r\n        @param saleId id of the current ongoing sale\r\n        @param tokenId tokenId of the license in the sale\r\n    **/\r\n    event SaleCreated(address indexed representative, uint256 indexed saleId, uint256 indexed tokenId);\r\n\r\n    /**\r\n        @notice emitted after a close sale\r\n        @param saleId id of the current ongoing sale\r\n    **/\r\n    event SaleClosed(uint256 indexed saleId);\r\n\r\n    /**\r\n        @notice emitted after a (future) sale is activated\r\n        @param saleId id of the current ongoing sale\r\n    **/\r\n    event SaleActivated(uint256 indexed saleId);\r\n\r\n    /**\r\n        @notice emitted after a license is bought from a sale\r\n        @param saleId id of the current ongoing sale\r\n        @param tokenId token id of the license to be sold\r\n    **/\r\n    event BoughtFromSale(uint256 indexed saleId, uint256 indexed tokenId, address buyer, uint256 amount);\r\n    \r\n    \r\n    /**\r\n        @notice emitted after a license is listed by a user\r\n        @param licenseId id of the current ongoing license\r\n        @param tokenId token id of the license to be sold\r\n        @param seller address of the lister\r\n        @param price matic price of the listed license id\r\n        @param listedAmount amount licences listed\r\n    **/\r\n    event LicenseListed(\r\n        uint256 indexed licenseId,\r\n        uint256 indexed tokenId,\r\n        address seller,\r\n        uint256 price,\r\n        uint256 indexed listedAmount\r\n    );\r\n\r\n    /**\r\n        @notice emitted after a license is listed by a user\r\n        @param licenseId id of the current ongoing license\r\n        @param tokenId token id of the license to be sold\r\n        @param seller address of the lister\r\n        @param buyer adress of buyer\r\n        @param amount amount licences listed\r\n        @param price matic price of the listed license id\r\n    **/\r\n    event LicenseSold (\r\n        uint256 licenseId,\r\n        uint256 indexed tokenId,\r\n        address indexed seller,\r\n        address indexed buyer,\r\n        uint256 amount,\r\n        uint256 price\r\n    );\r\n\r\n    /**\r\n        @notice emitted after a listed license is closed\r\n        @param licenseId id of the current ongoing license\r\n        @param tokenId token id of the closed listed license\r\n        @param seller address of the lister\r\n        @param status matic price of the listed license id\r\n    **/\r\n    event ListedLicenseClosed(\r\n        uint256 indexed licenseId, \r\n        uint256 indexed tokenId, \r\n        address indexed seller, \r\n        ListedStatus status\r\n    );\r\n\r\n    /**\r\n        @notice emitted after the treasury is updated \r\n        @param newTreasury address to which the treasury is updated to\r\n    **/\r\n    event TreasuryUpdated(address indexed newTreasury);\r\n\r\n    /**\r\n        @notice emitted after the treasury is updated \r\n        @param newEscrow address to which escrow is updated to\r\n    **/\r\n    event EscrowUpdated(address indexed newEscrow);\r\n    \r\n    /**\r\n        @notice emitted after the treasury is updated \r\n        @param newToken address to which escrow is updated to\r\n    **/\r\n    event TokenUpdated(address indexed newToken);\r\n\r\n    /**\r\n        @notice emitted after the treasury is updated \r\n        @param user address to which escrow is updated to\r\n    **/\r\n    event UserVerified(address indexed user);\r\n    \r\n    /**\r\n        @notice emitted after the listing fee is updated \r\n        @param listingFee new listing fee\r\n    **/\r\n    event ListingFeeUpdated(uint256 indexed listingFee);\r\n    \r\n    /**\r\n        @notice emitted after the commission basis points is updated \r\n        @param Commission new commission basis points\r\n    **/\r\n    event CommissionUpdated(uint96 indexed Commission);\r\n} ",
+  "sourcePath": "C:\\Users\\DELL\\Documents\\heirloomdao\\contracts\\contracts\\Types.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/Types.sol",
+    "exportedSymbols": {
+      "Types": [
+        6687
+      ]
+    },
+    "id": 6688,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 6537,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".4"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:23:41"
+      },
+      {
+        "abstract": true,
+        "baseContracts": [],
+        "canonicalName": "Types",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 6538,
+          "nodeType": "StructuredDocumentation",
+          "src": "60:86:41",
+          "text": "@title contains the data structures utilized in the heirloom marketplace;"
+        },
+        "fullyImplemented": true,
+        "id": 6687,
+        "linearizedBaseContracts": [
+          6687
+        ],
+        "name": "Types",
+        "nameLocation": "168:5:41",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "Types.ListedStatus",
+            "id": 6541,
+            "members": [
+              {
+                "id": 6539,
+                "name": "Open",
+                "nameLocation": "275:4:41",
+                "nodeType": "EnumValue",
+                "src": "275:4:41"
+              },
+              {
+                "id": 6540,
+                "name": "Closed",
+                "nameLocation": "281:6:41",
+                "nodeType": "EnumValue",
+                "src": "281:6:41"
+              }
+            ],
+            "name": "ListedStatus",
+            "nameLocation": "260:12:41",
+            "nodeType": "EnumDefinition",
+            "src": "255:34:41"
+          },
+          {
+            "canonicalName": "Types.SaleItem",
+            "id": 6568,
+            "members": [
+              {
+                "constant": false,
+                "id": 6543,
+                "mutability": "mutable",
+                "name": "saleId",
+                "nameLocation": "569:6:41",
+                "nodeType": "VariableDeclaration",
+                "scope": 6568,
+                "src": "561:14:41",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 6542,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "561:7:41",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 6545,
+                "mutability": "mutable",
+                "name": "licenseProvider",
+                "nameLocation": "594:15:41",
+                "nodeType": "VariableDeclaration",
+                "scope": 6568,
+                "src": "586:23:41",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 6544,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "586:7:41",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 6547,
+                "mutability": "mutable",
+                "name": "representative",
+                "nameLocation": "628:14:41",
+                "nodeType": "VariableDeclaration",
+                "scope": 6568,
+                "src": "620:22:41",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 6546,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "620:7:41",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 6549,
+                "mutability": "mutable",
+                "name": "tokenId",
+                "nameLocation": "661:7:41",
+                "nodeType": "VariableDeclaration",
+                "scope": 6568,
+                "src": "653:15:41",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 6548,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "653:7:41",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 6551,
+                "mutability": "mutable",
+                "name": "nftContract",
+                "nameLocation": "687:11:41",
+                "nodeType": "VariableDeclaration",
+                "scope": 6568,
+                "src": "679:19:41",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 6550,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "679:7:41",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 6553,
+                "mutability": "mutable",
+                "name": "refferer",
+                "nameLocation": "717:8:41",
+                "nodeType": "VariableDeclaration",
+                "scope": 6568,
+                "src": "709:16:41",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 6552,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "709:7:41",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 6555,
+                "mutability": "mutable",
+                "name": "soldLicenses",
+                "nameLocation": "744:12:41",
+                "nodeType": "VariableDeclaration",
+                "scope": 6568,
+                "src": "736:20:41",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 6554,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "736:7:41",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 6557,
+                "mutability": "mutable",
+                "name": "maxSupply",
+                "nameLocation": "775:9:41",
+                "nodeType": "VariableDeclaration",
+                "scope": 6568,
+                "src": "767:17:41",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 6556,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "767:7:41",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 6559,
+                "mutability": "mutable",
+                "name": "start",
+                "nameLocation": "803:5:41",
+                "nodeType": "VariableDeclaration",
+                "scope": 6568,
+                "src": "795:13:41",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 6558,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "795:7:41",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 6561,
+                "mutability": "mutable",
+                "name": "end",
+                "nameLocation": "827:3:41",
+                "nodeType": "VariableDeclaration",
+                "scope": 6568,
+                "src": "819:11:41",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 6560,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "819:7:41",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 6563,
+                "mutability": "mutable",
+                "name": "price",
+                "nameLocation": "849:5:41",
+                "nodeType": "VariableDeclaration",
+                "scope": 6568,
+                "src": "841:13:41",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 6562,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "841:7:41",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 6565,
+                "mutability": "mutable",
+                "name": "active",
+                "nameLocation": "870:6:41",
+                "nodeType": "VariableDeclaration",
+                "scope": 6568,
+                "src": "865:11:41",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 6564,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "865:4:41",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 6567,
+                "mutability": "mutable",
+                "name": "isFuture",
+                "nameLocation": "892:8:41",
+                "nodeType": "VariableDeclaration",
+                "scope": 6568,
+                "src": "887:13:41",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 6566,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "887:4:41",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "SaleItem",
+            "nameLocation": "541:8:41",
+            "nodeType": "StructDefinition",
+            "scope": 6687,
+            "src": "534:374:41",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "Types.LicenseItem",
+            "id": 6586,
+            "members": [
+              {
+                "constant": false,
+                "id": 6570,
+                "mutability": "mutable",
+                "name": "tokenId",
+                "nameLocation": "1014:7:41",
+                "nodeType": "VariableDeclaration",
+                "scope": 6586,
+                "src": "1006:15:41",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 6569,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1006:7:41",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 6572,
+                "mutability": "mutable",
+                "name": "licenseId",
+                "nameLocation": "1040:9:41",
+                "nodeType": "VariableDeclaration",
+                "scope": 6586,
+                "src": "1032:17:41",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 6571,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1032:7:41",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 6574,
+                "mutability": "mutable",
+                "name": "nftContract",
+                "nameLocation": "1068:11:41",
+                "nodeType": "VariableDeclaration",
+                "scope": 6586,
+                "src": "1060:19:41",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 6573,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1060:7:41",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 6576,
+                "mutability": "mutable",
+                "name": "seller",
+                "nameLocation": "1098:6:41",
+                "nodeType": "VariableDeclaration",
+                "scope": 6586,
+                "src": "1090:14:41",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 6575,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1090:7:41",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 6578,
+                "mutability": "mutable",
+                "name": "price",
+                "nameLocation": "1123:5:41",
+                "nodeType": "VariableDeclaration",
+                "scope": 6586,
+                "src": "1115:13:41",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 6577,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1115:7:41",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 6580,
+                "mutability": "mutable",
+                "name": "listedAmount",
+                "nameLocation": "1147:12:41",
+                "nodeType": "VariableDeclaration",
+                "scope": 6586,
+                "src": "1139:20:41",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 6579,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1139:7:41",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 6582,
+                "mutability": "mutable",
+                "name": "sold",
+                "nameLocation": "1178:4:41",
+                "nodeType": "VariableDeclaration",
+                "scope": 6586,
+                "src": "1170:12:41",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 6581,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1170:7:41",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 6585,
+                "mutability": "mutable",
+                "name": "status",
+                "nameLocation": "1206:6:41",
+                "nodeType": "VariableDeclaration",
+                "scope": 6586,
+                "src": "1193:19:41",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_ListedStatus_$6541",
+                  "typeString": "enum Types.ListedStatus"
+                },
+                "typeName": {
+                  "id": 6584,
+                  "nodeType": "UserDefinedTypeName",
+                  "pathNode": {
+                    "id": 6583,
+                    "name": "ListedStatus",
+                    "nodeType": "IdentifierPath",
+                    "referencedDeclaration": 6541,
+                    "src": "1193:12:41"
+                  },
+                  "referencedDeclaration": 6541,
+                  "src": "1193:12:41",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_ListedStatus_$6541",
+                    "typeString": "enum Types.ListedStatus"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "LicenseItem",
+            "nameLocation": "983:11:41",
+            "nodeType": "StructDefinition",
+            "scope": 6687,
+            "src": "976:245:41",
+            "visibility": "public"
+          },
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 6587,
+              "nodeType": "StructuredDocumentation",
+              "src": "1233:223:41",
+              "text": "@notice emitted after every sale created\n@param representative license provider\n@param saleId id of the current ongoing sale\n@param tokenId tokenId of the license in the sale*"
+            },
+            "eventSelector": "2c5a9de64e99c2ab1b836ad03048ec0bef7c0a2af3dd947595c46274e50a7c82",
+            "id": 6595,
+            "name": "SaleCreated",
+            "nameLocation": "1468:11:41",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 6594,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6589,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "representative",
+                  "nameLocation": "1496:14:41",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6595,
+                  "src": "1480:30:41",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6588,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1480:7:41",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6591,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "saleId",
+                  "nameLocation": "1528:6:41",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6595,
+                  "src": "1512:22:41",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6590,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1512:7:41",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6593,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "tokenId",
+                  "nameLocation": "1552:7:41",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6595,
+                  "src": "1536:23:41",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6592,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1536:7:41",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1479:81:41"
+            },
+            "src": "1462:99:41"
+          },
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 6596,
+              "nodeType": "StructuredDocumentation",
+              "src": "1569:110:41",
+              "text": "@notice emitted after a close sale\n@param saleId id of the current ongoing sale*"
+            },
+            "eventSelector": "cb67f20f64495b30f15524c55f90201dd6571d6b5c19dac183d2aeb25315b2dc",
+            "id": 6600,
+            "name": "SaleClosed",
+            "nameLocation": "1691:10:41",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 6599,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6598,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "saleId",
+                  "nameLocation": "1718:6:41",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6600,
+                  "src": "1702:22:41",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6597,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1702:7:41",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1701:24:41"
+            },
+            "src": "1685:41:41"
+          },
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 6601,
+              "nodeType": "StructuredDocumentation",
+              "src": "1734:126:41",
+              "text": "@notice emitted after a (future) sale is activated\n@param saleId id of the current ongoing sale*"
+            },
+            "eventSelector": "702ce4efe1de6302f5db4be4e00221938bf7d564452733ed1017feb52e979dd7",
+            "id": 6605,
+            "name": "SaleActivated",
+            "nameLocation": "1872:13:41",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 6604,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6603,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "saleId",
+                  "nameLocation": "1902:6:41",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6605,
+                  "src": "1886:22:41",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6602,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1886:7:41",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1885:24:41"
+            },
+            "src": "1866:44:41"
+          },
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 6606,
+              "nodeType": "StructuredDocumentation",
+              "src": "1918:188:41",
+              "text": "@notice emitted after a license is bought from a sale\n@param saleId id of the current ongoing sale\n@param tokenId token id of the license to be sold*"
+            },
+            "eventSelector": "5a9c9fcfe7b05adffc62900a02abd1b27a29fea7b21da7470fa30a986aa96463",
+            "id": 6616,
+            "name": "BoughtFromSale",
+            "nameLocation": "2118:14:41",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 6615,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6608,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "saleId",
+                  "nameLocation": "2149:6:41",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6616,
+                  "src": "2133:22:41",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6607,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2133:7:41",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6610,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "tokenId",
+                  "nameLocation": "2173:7:41",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6616,
+                  "src": "2157:23:41",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6609,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2157:7:41",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6612,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "buyer",
+                  "nameLocation": "2190:5:41",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6616,
+                  "src": "2182:13:41",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6611,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2182:7:41",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6614,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "amount",
+                  "nameLocation": "2205:6:41",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6616,
+                  "src": "2197:14:41",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6613,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2197:7:41",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2132:80:41"
+            },
+            "src": "2112:101:41"
+          },
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 6617,
+              "nodeType": "StructuredDocumentation",
+              "src": "2231:348:41",
+              "text": "@notice emitted after a license is listed by a user\n@param licenseId id of the current ongoing license\n@param tokenId token id of the license to be sold\n@param seller address of the lister\n@param price matic price of the listed license id\n@param listedAmount amount licences listed*"
+            },
+            "eventSelector": "a29719e0668112fd314a3f01101222c563cd19f94809a1483b5c39bcfb5d0cdb",
+            "id": 6629,
+            "name": "LicenseListed",
+            "nameLocation": "2591:13:41",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 6628,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6619,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "licenseId",
+                  "nameLocation": "2631:9:41",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6629,
+                  "src": "2615:25:41",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6618,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2615:7:41",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6621,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "tokenId",
+                  "nameLocation": "2667:7:41",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6629,
+                  "src": "2651:23:41",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6620,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2651:7:41",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6623,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "seller",
+                  "nameLocation": "2693:6:41",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6629,
+                  "src": "2685:14:41",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6622,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2685:7:41",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6625,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "price",
+                  "nameLocation": "2718:5:41",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6629,
+                  "src": "2710:13:41",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6624,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2710:7:41",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6627,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "listedAmount",
+                  "nameLocation": "2750:12:41",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6629,
+                  "src": "2734:28:41",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6626,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2734:7:41",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2604:165:41"
+            },
+            "src": "2585:185:41"
+          },
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 6630,
+              "nodeType": "StructuredDocumentation",
+              "src": "2778:380:41",
+              "text": "@notice emitted after a license is listed by a user\n@param licenseId id of the current ongoing license\n@param tokenId token id of the license to be sold\n@param seller address of the lister\n@param buyer adress of buyer\n@param amount amount licences listed\n@param price matic price of the listed license id*"
+            },
+            "eventSelector": "310fa35a97953eb1ad1a08f772c9bacdcc6d6eccc4c4340fa099e9d563f1b80a",
+            "id": 6644,
+            "name": "LicenseSold",
+            "nameLocation": "3170:11:41",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 6643,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6632,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "licenseId",
+                  "nameLocation": "3201:9:41",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6644,
+                  "src": "3193:17:41",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6631,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3193:7:41",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6634,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "tokenId",
+                  "nameLocation": "3237:7:41",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6644,
+                  "src": "3221:23:41",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6633,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3221:7:41",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6636,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "seller",
+                  "nameLocation": "3271:6:41",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6644,
+                  "src": "3255:22:41",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6635,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3255:7:41",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6638,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "buyer",
+                  "nameLocation": "3304:5:41",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6644,
+                  "src": "3288:21:41",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6637,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3288:7:41",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6640,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "amount",
+                  "nameLocation": "3328:6:41",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6644,
+                  "src": "3320:14:41",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6639,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3320:7:41",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6642,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "price",
+                  "nameLocation": "3353:5:41",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6644,
+                  "src": "3345:13:41",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6641,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3345:7:41",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3182:183:41"
+            },
+            "src": "3164:202:41"
+          },
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 6645,
+              "nodeType": "StructuredDocumentation",
+              "src": "3374:297:41",
+              "text": "@notice emitted after a listed license is closed\n@param licenseId id of the current ongoing license\n@param tokenId token id of the closed listed license\n@param seller address of the lister\n@param status matic price of the listed license id*"
+            },
+            "eventSelector": "c2fee623f95008bb6f752e72e5b825d18519f958fd686c5b9f872e3e6c2f89ba",
+            "id": 6656,
+            "name": "ListedLicenseClosed",
+            "nameLocation": "3683:19:41",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 6655,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6647,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "licenseId",
+                  "nameLocation": "3729:9:41",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6656,
+                  "src": "3713:25:41",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6646,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3713:7:41",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6649,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "tokenId",
+                  "nameLocation": "3766:7:41",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6656,
+                  "src": "3750:23:41",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6648,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3750:7:41",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6651,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "seller",
+                  "nameLocation": "3801:6:41",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6656,
+                  "src": "3785:22:41",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6650,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3785:7:41",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6654,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "status",
+                  "nameLocation": "3832:6:41",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6656,
+                  "src": "3819:19:41",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_ListedStatus_$6541",
+                    "typeString": "enum Types.ListedStatus"
+                  },
+                  "typeName": {
+                    "id": 6653,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 6652,
+                      "name": "ListedStatus",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 6541,
+                      "src": "3819:12:41"
+                    },
+                    "referencedDeclaration": 6541,
+                    "src": "3819:12:41",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_ListedStatus_$6541",
+                      "typeString": "enum Types.ListedStatus"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3702:143:41"
+            },
+            "src": "3677:169:41"
+          },
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 6657,
+              "nodeType": "StructuredDocumentation",
+              "src": "3854:140:41",
+              "text": "@notice emitted after the treasury is updated \n@param newTreasury address to which the treasury is updated to*"
+            },
+            "eventSelector": "7dae230f18360d76a040c81f050aa14eb9d6dc7901b20fc5d855e2a20fe814d1",
+            "id": 6661,
+            "name": "TreasuryUpdated",
+            "nameLocation": "4006:15:41",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 6660,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6659,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "newTreasury",
+                  "nameLocation": "4038:11:41",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6661,
+                  "src": "4022:27:41",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6658,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4022:7:41",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4021:29:41"
+            },
+            "src": "4000:51:41"
+          },
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 6662,
+              "nodeType": "StructuredDocumentation",
+              "src": "4059:132:41",
+              "text": "@notice emitted after the treasury is updated \n@param newEscrow address to which escrow is updated to*"
+            },
+            "eventSelector": "43ab431641dd45dd0661cad4b820e826d7c526af92e3121e1242d721f82ab3ad",
+            "id": 6666,
+            "name": "EscrowUpdated",
+            "nameLocation": "4203:13:41",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 6665,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6664,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "newEscrow",
+                  "nameLocation": "4233:9:41",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6666,
+                  "src": "4217:25:41",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6663,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4217:7:41",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4216:27:41"
+            },
+            "src": "4197:47:41"
+          },
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 6667,
+              "nodeType": "StructuredDocumentation",
+              "src": "4256:131:41",
+              "text": "@notice emitted after the treasury is updated \n@param newToken address to which escrow is updated to*"
+            },
+            "eventSelector": "5ba6b30cd4b2f9e9e67f4feb9b9df10d5da3b057598e6901b217b7d590345e30",
+            "id": 6671,
+            "name": "TokenUpdated",
+            "nameLocation": "4399:12:41",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 6670,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6669,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "newToken",
+                  "nameLocation": "4428:8:41",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6671,
+                  "src": "4412:24:41",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6668,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4412:7:41",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4411:26:41"
+            },
+            "src": "4393:45:41"
+          },
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 6672,
+              "nodeType": "StructuredDocumentation",
+              "src": "4446:127:41",
+              "text": "@notice emitted after the treasury is updated \n@param user address to which escrow is updated to*"
+            },
+            "eventSelector": "a6625d2d26e786e2f473111bea4b2fcdbbf1863d883a2359989ce3a103d2972a",
+            "id": 6676,
+            "name": "UserVerified",
+            "nameLocation": "4585:12:41",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 6675,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6674,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "user",
+                  "nameLocation": "4614:4:41",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6676,
+                  "src": "4598:20:41",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6673,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4598:7:41",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4597:22:41"
+            },
+            "src": "4579:41:41"
+          },
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 6677,
+              "nodeType": "StructuredDocumentation",
+              "src": "4632:114:41",
+              "text": "@notice emitted after the listing fee is updated \n@param listingFee new listing fee*"
+            },
+            "eventSelector": "5fb4654f1efe30c6141eaa6855ffcb27e0b361d899b05e21b1a4d0b3e71e14db",
+            "id": 6681,
+            "name": "ListingFeeUpdated",
+            "nameLocation": "4758:17:41",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 6680,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6679,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "listingFee",
+                  "nameLocation": "4792:10:41",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6681,
+                  "src": "4776:26:41",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6678,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4776:7:41",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4775:28:41"
+            },
+            "src": "4752:52:41"
+          },
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 6682,
+              "nodeType": "StructuredDocumentation",
+              "src": "4816:138:41",
+              "text": "@notice emitted after the commission basis points is updated \n@param Commission new commission basis points*"
+            },
+            "eventSelector": "f5f1dd947374c8610b1ff75330ed07a764589f544dc382c6df7b823a28bb740d",
+            "id": 6686,
+            "name": "CommissionUpdated",
+            "nameLocation": "4966:17:41",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 6685,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6684,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "Commission",
+                  "nameLocation": "4999:10:41",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6686,
+                  "src": "4984:25:41",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint96",
+                    "typeString": "uint96"
+                  },
+                  "typeName": {
+                    "id": 6683,
+                    "name": "uint96",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4984:6:41",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint96",
+                      "typeString": "uint96"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4983:27:41"
+            },
+            "src": "4960:51:41"
+          }
+        ],
+        "scope": 6688,
+        "src": "150:4864:41",
+        "usedErrors": []
+      }
+    ],
+    "src": "33:4982:41"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.14+commit.80d49f37.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.7",
+  "updatedAt": "2022-06-07T10:45:15.673Z",
+  "devdoc": {
+    "events": {
+      "BoughtFromSale(uint256,uint256,address,uint256)": {
+        "params": {
+          "saleId": "id of the current ongoing sale",
+          "tokenId": "token id of the license to be sold*"
+        }
+      },
+      "CommissionUpdated(uint96)": {
+        "params": {
+          "Commission": "new commission basis points*"
+        }
+      },
+      "EscrowUpdated(address)": {
+        "params": {
+          "newEscrow": "address to which escrow is updated to*"
+        }
+      },
+      "LicenseListed(uint256,uint256,address,uint256,uint256)": {
+        "params": {
+          "licenseId": "id of the current ongoing license",
+          "listedAmount": "amount licences listed*",
+          "price": "matic price of the listed license id",
+          "seller": "address of the lister",
+          "tokenId": "token id of the license to be sold"
+        }
+      },
+      "LicenseSold(uint256,uint256,address,address,uint256,uint256)": {
+        "params": {
+          "amount": "amount licences listed",
+          "buyer": "adress of buyer",
+          "licenseId": "id of the current ongoing license",
+          "price": "matic price of the listed license id*",
+          "seller": "address of the lister",
+          "tokenId": "token id of the license to be sold"
+        }
+      },
+      "ListedLicenseClosed(uint256,uint256,address,uint8)": {
+        "params": {
+          "licenseId": "id of the current ongoing license",
+          "seller": "address of the lister",
+          "status": "matic price of the listed license id*",
+          "tokenId": "token id of the closed listed license"
+        }
+      },
+      "ListingFeeUpdated(uint256)": {
+        "params": {
+          "listingFee": "new listing fee*"
+        }
+      },
+      "SaleActivated(uint256)": {
+        "params": {
+          "saleId": "id of the current ongoing sale*"
+        }
+      },
+      "SaleClosed(uint256)": {
+        "params": {
+          "saleId": "id of the current ongoing sale*"
+        }
+      },
+      "SaleCreated(address,uint256,uint256)": {
+        "params": {
+          "representative": "license provider",
+          "saleId": "id of the current ongoing sale",
+          "tokenId": "tokenId of the license in the sale*"
+        }
+      },
+      "TokenUpdated(address)": {
+        "params": {
+          "newToken": "address to which escrow is updated to*"
+        }
+      },
+      "TreasuryUpdated(address)": {
+        "params": {
+          "newTreasury": "address to which the treasury is updated to*"
+        }
+      },
+      "UserVerified(address)": {
+        "params": {
+          "user": "address to which escrow is updated to*"
+        }
+      }
+    },
+    "kind": "dev",
+    "methods": {},
+    "title": "contains the data structures utilized in the heirloom marketplace;",
+    "version": 1
+  },
+  "userdoc": {
+    "events": {
+      "BoughtFromSale(uint256,uint256,address,uint256)": {
+        "notice": "emitted after a license is bought from a sale"
+      },
+      "CommissionUpdated(uint96)": {
+        "notice": "emitted after the commission basis points is updated "
+      },
+      "EscrowUpdated(address)": {
+        "notice": "emitted after the treasury is updated "
+      },
+      "LicenseListed(uint256,uint256,address,uint256,uint256)": {
+        "notice": "emitted after a license is listed by a user"
+      },
+      "LicenseSold(uint256,uint256,address,address,uint256,uint256)": {
+        "notice": "emitted after a license is listed by a user"
+      },
+      "ListedLicenseClosed(uint256,uint256,address,uint8)": {
+        "notice": "emitted after a listed license is closed"
+      },
+      "ListingFeeUpdated(uint256)": {
+        "notice": "emitted after the listing fee is updated "
+      },
+      "SaleActivated(uint256)": {
+        "notice": "emitted after a (future) sale is activated"
+      },
+      "SaleClosed(uint256)": {
+        "notice": "emitted after a close sale"
+      },
+      "SaleCreated(address,uint256,uint256)": {
+        "notice": "emitted after every sale created"
+      },
+      "TokenUpdated(address)": {
+        "notice": "emitted after the treasury is updated "
+      },
+      "TreasuryUpdated(address)": {
+        "notice": "emitted after the treasury is updated "
+      },
+      "UserVerified(address)": {
+        "notice": "emitted after the treasury is updated "
+      }
+    },
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

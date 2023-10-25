@@ -1,0 +1,30 @@
+{
+  "name": "heirloom-contracts",
+  "version": "0.0.0",
+  "description": "smart contracts for heirloomDAO",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@mapbox/node-pre-gyp": "^1.0.8",
+    "@openzeppelin/contracts": "^4.5.0",
+    "@openzeppelin/contracts-upgradeable": "^4.6.0",
+    "@openzeppelin/truffle-upgrades": "^1.15.0",
+    "@rarible/exchange-interfaces": "^0.4.0",
+    "@rarible/lib-asset": "^0.1.2",
+    "@rarible/libraries": "^0.1.2",
+    "@rarible/royalties": "^0.7.4",
+    "@truffle/hdwallet-provider": "^2.0.4",
+    "chai": "^4.3.6",
+    "chai-as-promised": "^7.1.1",
+    "dotenv": "^16.0.0",
+    "node-fetch": "^3.2.3",
+    "web3": "^1.7.1"
+  }
+}

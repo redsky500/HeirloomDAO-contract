@@ -1,0 +1,344 @@
+{
+  "manifestVersion": "3.2",
+  "proxies": [
+    {
+      "address": "0x9766e0b4A8BCDaC0B3432D98ea2D9345B91375c7",
+      "txHash": "0xe0e95f7194aa440781161385a97b2ee6e40b7dc0209837f0d251520c13245323",
+      "kind": "uups"
+    },
+    {
+      "address": "0x8718008E1139f3DAc897EE29FBB2063C523FE10D",
+      "txHash": "0xa2a86c0a4636fd208a759f691e7dd7f41649e860f0dc2b0e1ed4eb6b95feda1c",
+      "kind": "uups"
+    },
+    {
+      "address": "0x6803a85C94b2624492371d11108f85166dFE10E5",
+      "txHash": "0xf67e6df16db7d555997436dbd9ed27885bae3c98e8ebb41965eded9efde16f89",
+      "kind": "uups"
+    },
+    {
+      "address": "0xF72cec518831a405AC75e2818CF7e60772D57D6d",
+      "txHash": "0x15ccf3b3d3ed7e872d84eb9dccb19733c5f997466d574df6963dfed7dd599a61",
+      "kind": "uups"
+    },
+    {
+      "address": "0x9efe2C50885ae794b79B6225B0c8FAc0736A37AF",
+      "txHash": "0xe415bead82b32741c04b70d749166e6fc5fc98fea634f28edd5a9bc9ea91eeb7",
+      "kind": "uups"
+    },
+    {
+      "address": "0x51046c41F0C83879f19D6e6f35723f329b6049cE",
+      "txHash": "0xf3b80f6e68c79107f284ad0ae32a90d8f1cdf0b72f385b43317ea32d0ab61200",
+      "kind": "uups"
+    },
+    {
+      "address": "0x21Ea5eEF6AE1954cCFd0e8aba9d0c6F4cF24f5e9",
+      "txHash": "0xca508074c769e0295e77f08b1596c28b88a3e98d887ff65959234bf9e18c2224",
+      "kind": "uups"
+    }
+  ],
+  "impls": {
+    "a034b435e55f7ce476fd11b2861719c7b209471d943f4c89ba2a610204c2e5d5": {
+      "address": "0xa36c3c7B9724cE0E39a7c4e5B1590E09f6701b6F",
+      "txHash": "0xcff79c4a9619b3804b5c99e09e7aa8261b2fb844bcc0b2cb061a6140241b7441",
+      "layout": {
+        "storage": [
+          {
+            "contract": "HeirloomStorage",
+            "label": "LISTING_FEE",
+            "type": "t_uint256",
+            "src": "..\\project:\\contracts\\HeirloomStorage.sol:11"
+          },
+          {
+            "contract": "HeirloomStorage",
+            "label": "COMMISSION_BP",
+            "type": "t_uint96",
+            "src": "..\\project:\\contracts\\HeirloomStorage.sol:12"
+          },
+          {
+            "contract": "HeirloomStorage",
+            "label": "_hiloToken",
+            "type": "t_address",
+            "src": "..\\project:\\contracts\\HeirloomStorage.sol:14"
+          },
+          {
+            "contract": "HeirloomStorage",
+            "label": "_escrowSales",
+            "type": "t_address",
+            "src": "..\\project:\\contracts\\HeirloomStorage.sol:15"
+          },
+          {
+            "contract": "HeirloomStorage",
+            "label": "_escrowListed",
+            "type": "t_address",
+            "src": "..\\project:\\contracts\\HeirloomStorage.sol:16"
+          },
+          {
+            "contract": "HeirloomStorage",
+            "label": "_treasury",
+            "type": "t_address",
+            "src": "..\\project:\\contracts\\HeirloomStorage.sol:17"
+          },
+          {
+            "contract": "HeirloomStorage",
+            "label": "_saleIds",
+            "type": "t_struct(Counter)5279_storage",
+            "src": "..\\project:\\contracts\\HeirloomStorage.sol:19"
+          },
+          {
+            "contract": "HeirloomStorage",
+            "label": "_closedSales",
+            "type": "t_struct(Counter)5279_storage",
+            "src": "..\\project:\\contracts\\HeirloomStorage.sol:20"
+          },
+          {
+            "contract": "HeirloomStorage",
+            "label": "_licenseItemIds",
+            "type": "t_struct(Counter)5279_storage",
+            "src": "..\\project:\\contracts\\HeirloomStorage.sol:21"
+          },
+          {
+            "contract": "HeirloomStorage",
+            "label": "_closedLicenseItems",
+            "type": "t_struct(Counter)5279_storage",
+            "src": "..\\project:\\contracts\\HeirloomStorage.sol:22"
+          },
+          {
+            "contract": "HeirloomStorage",
+            "label": "_futureSales",
+            "type": "t_struct(Counter)5279_storage",
+            "src": "..\\project:\\contracts\\HeirloomStorage.sol:23"
+          },
+          {
+            "contract": "HeirloomStorage",
+            "label": "_isVerified",
+            "type": "t_mapping(t_address,t_bool)",
+            "src": "..\\project:\\contracts\\HeirloomStorage.sol:25"
+          },
+          {
+            "contract": "HeirloomStorage",
+            "label": "_idToSaleItem",
+            "type": "t_mapping(t_uint256,t_struct(SaleItem)6568_storage)",
+            "src": "..\\project:\\contracts\\HeirloomStorage.sol:26"
+          },
+          {
+            "contract": "HeirloomStorage",
+            "label": "_idToLicenseItem",
+            "type": "t_mapping(t_uint256,t_struct(LicenseItem)6586_storage)",
+            "src": "..\\project:\\contracts\\HeirloomStorage.sol:27"
+          },
+          {
+            "contract": "Initializable",
+            "label": "_initialized",
+            "type": "t_uint8",
+            "src": "..\\@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:62",
+            "retypedFrom": "bool"
+          },
+          {
+            "contract": "Initializable",
+            "label": "_initializing",
+            "type": "t_bool",
+            "src": "..\\@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:67"
+          },
+          {
+            "contract": "ContextUpgradeable",
+            "label": "__gap",
+            "type": "t_array(t_uint256)50_storage",
+            "src": "..\\@openzeppelin\\contracts-upgradeable\\utils\\ContextUpgradeable.sol:36"
+          },
+          {
+            "contract": "ERC165Upgradeable",
+            "label": "__gap",
+            "type": "t_array(t_uint256)50_storage",
+            "src": "..\\@openzeppelin\\contracts-upgradeable\\utils\\introspection\\ERC165Upgradeable.sol:41"
+          },
+          {
+            "contract": "AccessControlUpgradeable",
+            "label": "_roles",
+            "type": "t_mapping(t_bytes32,t_struct(RoleData)34_storage)",
+            "src": "..\\@openzeppelin\\contracts-upgradeable\\access\\AccessControlUpgradeable.sol:61"
+          },
+          {
+            "contract": "AccessControlUpgradeable",
+            "label": "__gap",
+            "type": "t_array(t_uint256)49_storage",
+            "src": "..\\@openzeppelin\\contracts-upgradeable\\access\\AccessControlUpgradeable.sol:247"
+          },
+          {
+            "contract": "PausableUpgradeable",
+            "label": "_paused",
+            "type": "t_bool",
+            "src": "..\\@openzeppelin\\contracts-upgradeable\\security\\PausableUpgradeable.sol:29"
+          },
+          {
+            "contract": "PausableUpgradeable",
+            "label": "__gap",
+            "type": "t_array(t_uint256)49_storage",
+            "src": "..\\@openzeppelin\\contracts-upgradeable\\security\\PausableUpgradeable.sol:102"
+          }
+        ],
+        "types": {
+          "t_bool": {
+            "label": "bool"
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]"
+          },
+          "t_uint256": {
+            "label": "uint256"
+          },
+          "t_mapping(t_bytes32,t_struct(RoleData)34_storage)": {
+            "label": "mapping(bytes32 => struct AccessControlUpgradeable.RoleData)"
+          },
+          "t_bytes32": {
+            "label": "bytes32"
+          },
+          "t_struct(RoleData)34_storage": {
+            "label": "struct AccessControlUpgradeable.RoleData",
+            "members": [
+              {
+                "label": "members",
+                "type": "t_mapping(t_address,t_bool)"
+              },
+              {
+                "label": "adminRole",
+                "type": "t_bytes32"
+              }
+            ]
+          },
+          "t_mapping(t_address,t_bool)": {
+            "label": "mapping(address => bool)"
+          },
+          "t_address": {
+            "label": "address"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]"
+          },
+          "t_uint8": {
+            "label": "uint8"
+          },
+          "t_uint96": {
+            "label": "uint96"
+          },
+          "t_struct(Counter)5279_storage": {
+            "label": "struct Counters.Counter",
+            "members": [
+              {
+                "label": "_value",
+                "type": "t_uint256"
+              }
+            ]
+          },
+          "t_mapping(t_uint256,t_struct(SaleItem)6568_storage)": {
+            "label": "mapping(uint256 => struct Types.SaleItem)"
+          },
+          "t_struct(SaleItem)6568_storage": {
+            "label": "struct Types.SaleItem",
+            "members": [
+              {
+                "label": "saleId",
+                "type": "t_uint256"
+              },
+              {
+                "label": "licenseProvider",
+                "type": "t_address"
+              },
+              {
+                "label": "representative",
+                "type": "t_address"
+              },
+              {
+                "label": "tokenId",
+                "type": "t_uint256"
+              },
+              {
+                "label": "nftContract",
+                "type": "t_address"
+              },
+              {
+                "label": "refferer",
+                "type": "t_address"
+              },
+              {
+                "label": "soldLicenses",
+                "type": "t_uint256"
+              },
+              {
+                "label": "maxSupply",
+                "type": "t_uint256"
+              },
+              {
+                "label": "start",
+                "type": "t_uint256"
+              },
+              {
+                "label": "end",
+                "type": "t_uint256"
+              },
+              {
+                "label": "price",
+                "type": "t_uint256"
+              },
+              {
+                "label": "active",
+                "type": "t_bool"
+              },
+              {
+                "label": "isFuture",
+                "type": "t_bool"
+              }
+            ]
+          },
+          "t_mapping(t_uint256,t_struct(LicenseItem)6586_storage)": {
+            "label": "mapping(uint256 => struct Types.LicenseItem)"
+          },
+          "t_struct(LicenseItem)6586_storage": {
+            "label": "struct Types.LicenseItem",
+            "members": [
+              {
+                "label": "tokenId",
+                "type": "t_uint256"
+              },
+              {
+                "label": "licenseId",
+                "type": "t_uint256"
+              },
+              {
+                "label": "nftContract",
+                "type": "t_address"
+              },
+              {
+                "label": "seller",
+                "type": "t_address"
+              },
+              {
+                "label": "price",
+                "type": "t_uint256"
+              },
+              {
+                "label": "listedAmount",
+                "type": "t_uint256"
+              },
+              {
+                "label": "sold",
+                "type": "t_uint256"
+              },
+              {
+                "label": "status",
+                "type": "t_enum(ListedStatus)6541"
+              }
+            ]
+          },
+          "t_enum(ListedStatus)6541": {
+            "label": "enum Types.ListedStatus",
+            "members": [
+              "Open",
+              "Closed"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

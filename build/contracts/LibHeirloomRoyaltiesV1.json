@@ -1,0 +1,119 @@
+{
+  "contractName": "LibHeirloomRoyaltiesV1",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.14+commit.80d49f37\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/libs/LibHeirloomRoyaltiesV1.sol\":\"LibHeirloomRoyaltiesV1\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":500},\"remappings\":[]},\"sources\":{\"project:/contracts/libs/LibHeirloomRoyaltiesV1.sol\":{\"keccak256\":\"0x55ebceb93ee1cb0f1990148c9741cb577d34acec0078e3a3e43691bd70d4fd3f\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ec8dbdf5b4602d81329fd3ce1c8f92609583029284b8d71ced132662ccc5da7f\",\"dweb:/ipfs/QmeyuWzHsqEH3XkXpY2r32f59mXBExAwx4RjRQcxms7YuT\"]}},\"version\":1}",
+  "bytecode": "0x60566037600b82828239805160001a607314602a57634e487b7160e01b600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea264697066735822122032b123319eddd59ab4113b535c668285c7081b28476f56cbb7bf49a6d4a193bb64736f6c634300080e0033",
+  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fdfea264697066735822122032b123319eddd59ab4113b535c668285c7081b28476f56cbb7bf49a6d4a193bb64736f6c634300080e0033",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "60:186:46:-:0;;;;;;;;;;;;;;;-1:-1:-1;;;60:186:46;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "60:186:46:-:0;;;;;;;;",
+  "source": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.4;\r\n\r\nlibrary LibHeirloomRoyaltiesV1 {\r\n    /*\r\n     * bytes4(keccak256('getHeirloomV1Royalties(uint256)')) == 0xb9220a74\r\n     */\r\n    bytes4 constant _INTERFACE_ID_ROYALTIES = 0xb9220a74;\r\n}\r\n",
+  "sourcePath": "C:\\Users\\DELL\\Documents\\heirloomdao\\contracts\\contracts\\libs\\LibHeirloomRoyaltiesV1.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/libs/LibHeirloomRoyaltiesV1.sol",
+    "exportedSymbols": {
+      "LibHeirloomRoyaltiesV1": [
+        7987
+      ]
+    },
+    "id": 7988,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 7983,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".4"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:23:46"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "LibHeirloomRoyaltiesV1",
+        "contractDependencies": [],
+        "contractKind": "library",
+        "fullyImplemented": true,
+        "id": 7987,
+        "linearizedBaseContracts": [
+          7987
+        ],
+        "name": "LibHeirloomRoyaltiesV1",
+        "nameLocation": "68:22:46",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": true,
+            "id": 7986,
+            "mutability": "constant",
+            "name": "_INTERFACE_ID_ROYALTIES",
+            "nameLocation": "206:23:46",
+            "nodeType": "VariableDeclaration",
+            "scope": 7987,
+            "src": "190:52:46",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes4",
+              "typeString": "bytes4"
+            },
+            "typeName": {
+              "id": 7984,
+              "name": "bytes4",
+              "nodeType": "ElementaryTypeName",
+              "src": "190:6:46",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes4",
+                "typeString": "bytes4"
+              }
+            },
+            "value": {
+              "hexValue": "30786239323230613734",
+              "id": 7985,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "232:10:46",
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_3106015860_by_1",
+                "typeString": "int_const 3106015860"
+              },
+              "value": "0xb9220a74"
+            },
+            "visibility": "internal"
+          }
+        ],
+        "scope": 7988,
+        "src": "60:186:46",
+        "usedErrors": []
+      }
+    ],
+    "src": "33:215:46"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.14+commit.80d49f37.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.7",
+  "updatedAt": "2022-06-07T10:45:15.731Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}
